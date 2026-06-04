@@ -38,7 +38,7 @@ nav{position:fixed;top:36px;left:0;right:0;z-index:100;display:flex;align-items:
 
 /* ── HERO ── */
 #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 0 5rem;position:relative;overflow:hidden;margin-top:36px;}
-.hero-img{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=1400&q=80');background-size:cover;background-position:center;filter:brightness(0.3);}
+.hero-img{position:absolute;inset:0;background-image:url('https://res.cloudinary.com/djghq9o2h/image/upload/f_auto,q_auto/v1780604324/496840531_1276228944503597_8084285068729001035_n.jpg_ugorhb.jpg');background-size:cover;background-position:center;filter:brightness(0.3);}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,var(--dark) 0%,rgba(13,5,20,0.6) 50%,rgba(107,33,168,0.15) 100%);}
 #particles{position:absolute;inset:0;z-index:1;}
 .hero-content{position:relative;z-index:2;max-width:800px;padding:0 2.5rem;}
@@ -227,6 +227,8 @@ section{padding:5rem 2.5rem;}
 .gallery-item:nth-child(1){grid-column:span 2;height:280px;}
 .gallery-item:nth-child(2){height:280px;}
 .gallery-item:nth-child(3),.gallery-item:nth-child(4),.gallery-item:nth-child(5){height:200px;}
+.gallery-item:nth-child(6){grid-column:span 2;height:220px;}
+.gallery-item:nth-child(7),.gallery-item:nth-child(8){height:220px;}
 .gallery-overlay{position:absolute;inset:0;opacity:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;transition:opacity 0.3s;}
 .gallery-item:hover .gallery-overlay{opacity:1;}
 .gallery-zoom{width:48px;height:48px;border-radius:50%;background:rgba(250,204,21,0.9);display:flex;align-items:center;justify-content:center;font-size:1.2rem;transform:scale(0.7);transition:transform 0.3s;}
@@ -450,7 +452,7 @@ footer{background:var(--dark);padding:2rem 2.5rem;display:flex;align-items:cente
 <!-- ABOUT -->
 <section id="about">
   <div class="about-img-wrap reveal-left">
-    <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800&q=80" alt="Team huddle" loading="lazy">
+    <img src="https://res.cloudinary.com/djghq9o2h/image/upload/f_auto,q_auto/v1780604346/497731654_1276509237808901_3459449620440424758_n.jpg_pnrk3i.jpg" alt="Alex BC team" loading="lazy">
     <div class="about-img-overlay"></div>
     <div class="about-badge">Since 2015</div>
   </div>
@@ -708,29 +710,44 @@ footer{background:var(--dark);padding:2rem 2.5rem;display:flex;align-items:cente
   <p class="section-sub reveal">From school outreach to game days — every photo tells a story of community and impact.</p>
   <div class="gallery-grid">
     <div class="gallery-item reveal delay-1" onclick="openLightbox(0)">
-      <img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=800&q=80" alt="Community outreach">
-      <div class="gallery-overlay"><div class="gallery-zoom">🔍</div><div class="gallery-label">Community Outreach</div></div>
-      <div class="gallery-corner">Community Outreach</div>
+      <img src="https://res.cloudinary.com/djghq9o2h/image/upload/f_auto,q_auto/v1780604450/495628627_1275171141276044_4248378026335301346_n.jpg_xezfch.jpg" alt="Alex BC">
+      <div class="gallery-overlay"><div class="gallery-zoom">🔍</div><div class="gallery-label">Training Session</div></div>
+      <div class="gallery-corner">Training Session</div>
     </div>
     <div class="gallery-item reveal delay-2" onclick="openLightbox(1)">
-      <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&q=80" alt="Coaching clinic">
-      <div class="gallery-overlay"><div class="gallery-zoom">🔍</div><div class="gallery-label">Coaching Clinic</div></div>
-      <div class="gallery-corner">Coaching Clinic</div>
-    </div>
-    <div class="gallery-item reveal delay-3" onclick="openLightbox(2)">
-      <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?w=600&q=80" alt="Game day">
+      <img src="https://res.cloudinary.com/djghq9o2h/image/upload/f_auto,q_auto/v1780604411/497779507_1276330111160147_3651367978585516854_n.jpg_hboqsa.jpg" alt="Alex BC">
       <div class="gallery-overlay"><div class="gallery-zoom">🔍</div><div class="gallery-label">Game Day</div></div>
       <div class="gallery-corner">Game Day</div>
     </div>
+    <div class="gallery-item reveal delay-3" onclick="openLightbox(2)">
+      <img src="https://res.cloudinary.com/djghq9o2h/image/upload/f_auto,q_auto/v1780604495/494125355_1263605889099236_3141502248011091293_n.jpg_dveery.jpg" alt="Alex BC">
+      <div class="gallery-overlay"><div class="gallery-zoom">🔍</div><div class="gallery-label">Community</div></div>
+      <div class="gallery-corner">Community</div>
+    </div>
     <div class="gallery-item reveal delay-4" onclick="openLightbox(3)">
-      <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&q=80" alt="Girls programme">
-      <div class="gallery-overlay"><div class="gallery-zoom">🔍</div><div class="gallery-label">Girls Programme</div></div>
-      <div class="gallery-corner">Girls Programme</div>
+      <img src="https://res.cloudinary.com/djghq9o2h/image/upload/f_auto,q_auto/v1780604510/494377470_1263358502457308_898068997558932606_n.jpg_mumm6l.jpg" alt="Alex BC">
+      <div class="gallery-overlay"><div class="gallery-zoom">🔍</div><div class="gallery-label">Youth Development</div></div>
+      <div class="gallery-corner">Youth Development</div>
     </div>
     <div class="gallery-item reveal delay-5" onclick="openLightbox(4)">
-      <img src="https://images.unsplash.com/photo-1515523110800-9415d13b84a8?w=600&q=80" alt="School visit">
-      <div class="gallery-overlay"><div class="gallery-zoom">🔍</div><div class="gallery-label">School Visit</div></div>
-      <div class="gallery-corner">School Visit</div>
+      <img src="https://res.cloudinary.com/djghq9o2h/image/upload/f_auto,q_auto/v1780604527/492486173_1258565652936593_951817873234168130_n.jpg_b6mkek.jpg" alt="Alex BC">
+      <div class="gallery-overlay"><div class="gallery-zoom">🔍</div><div class="gallery-label">Coaching Clinic</div></div>
+      <div class="gallery-corner">Coaching Clinic</div>
+    </div>
+    <div class="gallery-item reveal delay-1" onclick="openLightbox(5)">
+      <img src="https://res.cloudinary.com/djghq9o2h/image/upload/f_auto,q_auto/v1780604543/490677545_1245758674217291_8551900390837003643_n.jpg_ppgtkt.jpg" alt="Alex BC">
+      <div class="gallery-overlay"><div class="gallery-zoom">🔍</div><div class="gallery-label">Tournament</div></div>
+      <div class="gallery-corner">Tournament</div>
+    </div>
+    <div class="gallery-item reveal delay-2" onclick="openLightbox(6)">
+      <img src="https://res.cloudinary.com/djghq9o2h/image/upload/f_auto,q_auto/v1780604597/486778109_1232487958877696_3049307888859410715_n.jpg_f1pvc9.jpg" alt="Alex BC">
+      <div class="gallery-overlay"><div class="gallery-zoom">🔍</div><div class="gallery-label">Squad</div></div>
+      <div class="gallery-corner">Squad</div>
+    </div>
+    <div class="gallery-item reveal delay-3" onclick="openLightbox(7)">
+      <img src="https://res.cloudinary.com/djghq9o2h/image/upload/f_auto,q_auto/v1780604612/486608510_9703463093046831_1792655172278674053_n.jpg_rbkuiz.jpg" alt="Alex BC">
+      <div class="gallery-overlay"><div class="gallery-zoom">🔍</div><div class="gallery-label">Action</div></div>
+      <div class="gallery-corner">Action</div>
     </div>
   </div>
 </section>
@@ -974,11 +991,19 @@ function closeModal(e){if(e.target===document.getElementById('playerModal'))clos
 
 // ── LIGHTBOX ──
 const lbImgs=[
-  {src:'https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=1200&q=80',cap:'Community Outreach'},
-  {src:'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1200&q=80',cap:'Coaching Clinic'},
-  {src:'https://images.unsplash.com/photo-1519861531473-9200262188bf?w=1200&q=80',cap:'Game Day'},
-  {src:'https://images.unsplash.com/photo-1546519638-68e109498ffc?w=1200&q=80',cap:'Girls Programme'},
-  {src:'https://images.unsplash.com/photo-1515523110800-9415d13b84a8?w=1200&q=80',cap:'School Visit'},
+  {src:'https://res.cloudinary.com/djghq9o2h/image/upload/f_auto,q_auto/v1780604450/495628627_1275171141276044_4248378026335301346_n.jpg_xezfch.jpg',cap:'Training Session'},
+  {src:'https://res.cloudinary.com/djghq9o2h/image/upload/f_auto,q_auto/v1780604411/497779507_1276330111160147_3651367978585516854_n.jpg_hboqsa.jpg',cap:'Game Day'},
+  {src:'https://res.cloudinary.com/djghq9o2h/image/upload/f_auto,q_auto/v1780604495/494125355_1263605889099236_3141502248011091293_n.jpg_dveery.jpg',cap:'Community'},
+  {src:'https://res.cloudinary.com/djghq9o2h/image/upload/f_auto,q_auto/v1780604510/494377470_1263358502457308_898068997558932606_n.jpg_mumm6l.jpg',cap:'Youth Development'},
+  {src:'https://res.cloudinary.com/djghq9o2h/image/upload/f_auto,q_auto/v1780604527/492486173_1258565652936593_951817873234168130_n.jpg_b6mkek.jpg',cap:'Coaching Clinic'},
+  {src:'https://res.cloudinary.com/djghq9o2h/image/upload/f_auto,q_auto/v1780604543/490677545_1245758674217291_8551900390837003643_n.jpg_ppgtkt.jpg',cap:'Tournament'},
+  {src:'https://res.cloudinary.com/djghq9o2h/image/upload/f_auto,q_auto/v1780604597/486778109_1232487958877696_3049307888859410715_n.jpg_f1pvc9.jpg',cap:'Squad'},
+  {src:'https://res.cloudinary.com/djghq9o2h/image/upload/f_auto,q_auto/v1780604612/486608510_9703463093046831_1792655172278674053_n.jpg_rbkuiz.jpg',cap:'Action'},
+  {src:'https://res.cloudinary.com/djghq9o2h/image/upload/f_auto,q_auto/v1780604624/485975939_9696815837044890_8402706036420777966_n.jpg_jqn5zm.jpg',cap:'Alex BC'},
+  {src:'https://res.cloudinary.com/djghq9o2h/image/upload/f_auto,q_auto/v1780604650/484547305_9672022642857543_1673723734025302576_n.jpg_wiwcjl.jpg',cap:'Alex BC'},
+  {src:'https://res.cloudinary.com/djghq9o2h/image/upload/f_auto,q_auto/v1780604676/198228384_4271642952895566_825688172799373464_n.jpg_f70sfh.jpg',cap:'Alex BC'},
+  {src:'https://res.cloudinary.com/djghq9o2h/image/upload/f_auto,q_auto/v1780604346/497731654_1276509237808901_3459449620440424758_n.jpg_pnrk3i.jpg',cap:'Team'},
+  {src:'https://res.cloudinary.com/djghq9o2h/image/upload/f_auto,q_auto/v1780604324/496840531_1276228944503597_8084285068729001035_n.jpg_ugorhb.jpg',cap:'Alex Basketball Club'},
 ];
 let lbIndex=0;
 function openLightbox(i){
