@@ -305,6 +305,7 @@ footer{background:var(--dark);padding:2rem 2.5rem;display:flex;align-items:cente
     <li><a href="#achievements">Honours</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#games">Schedule</a></li>
+    <li><a href="#stream">Live Stream</a></li>
     <li><a href="#sponsors">Sponsors</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -445,30 +446,147 @@ footer{background:var(--dark);padding:2rem 2.5rem;display:flex;align-items:cente
   </div>
 </section>
 
-<!-- FIXTURE CALENDAR -->
+<!-- RESULTS & SCHEDULE -->
 <section id="games">
-  <p class="section-tag reveal">Schedule</p>
-  <h2 class="section-title reveal">Fixture <span>Calendar</span></h2>
+  <p class="section-tag reveal">Eagles League 2026</p>
+  <h2 class="section-title reveal">Results & <span>Schedule</span></h2>
   <div class="divider reveal"></div>
-  <p class="section-sub reveal">Click any highlighted date to see game details.</p>
-  <div class="calendar-wrap reveal">
-    <div class="cal-header">
-      <div class="cal-title" id="calTitle"></div>
-      <div class="cal-nav">
-        <button onclick="changeMonth(-1)">&#8592;</button>
-        <button onclick="changeMonth(1)">&#8594;</button>
+
+  <!-- Tabs -->
+  <div style="display:flex;gap:0;margin-bottom:2rem;border-radius:8px;overflow:hidden;border:1px solid rgba(147,51,234,0.3);width:fit-content" class="reveal">
+    <button onclick="showTab('upcoming')" id="tab-upcoming" style="padding:0.7rem 1.8rem;background:var(--yellow);color:var(--pd);border:none;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.95rem;letter-spacing:1px;text-transform:uppercase;transition:all 0.2s">Upcoming</button>
+    <button onclick="showTab('results')" id="tab-results" style="padding:0.7rem 1.8rem;background:var(--card);color:var(--gray);border:none;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.95rem;letter-spacing:1px;text-transform:uppercase;transition:all 0.2s">Past Results</button>
+    <button onclick="showTab('calendar')" id="tab-calendar" style="padding:0.7rem 1.8rem;background:var(--card);color:var(--gray);border:none;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.95rem;letter-spacing:1px;text-transform:uppercase;transition:all 0.2s">Calendar</button>
+  </div>
+
+  <!-- UPCOMING -->
+  <div id="pane-upcoming">
+    <div style="background:rgba(250,204,21,0.08);border:1px solid rgba(250,204,21,0.25);border-radius:10px;padding:1.5rem 2rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem">
+      <span style="font-size:2rem">📅</span>
+      <div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:1px;text-transform:uppercase;color:var(--yellow)">Season Resuming</div>
+        <div style="font-size:1rem;color:var(--white);margin-top:0.2rem">Matches resume <strong style="color:var(--yellow)">20 June 2026</strong> — check back for updated fixtures!</div>
+        <div style="font-size:0.85rem;color:var(--gray);margin-top:0.3rem">Full schedule: <a href="https://www.eaglesbasketleague.co.za/2026-eagles-league-season/" target="_blank" style="color:var(--pl);text-decoration:none">Eagles Basketball League ↗</a></div>
       </div>
     </div>
-    <div class="cal-grid-header">
-      <div class="cal-day-name">Sun</div><div class="cal-day-name">Mon</div><div class="cal-day-name">Tue</div>
-      <div class="cal-day-name">Wed</div><div class="cal-day-name">Thu</div><div class="cal-day-name">Fri</div><div class="cal-day-name">Sat</div>
+    <div style="display:flex;flex-direction:column;gap:1rem">
+      <div class="game-card reveal"><div style="text-align:center;min-width:60px"><div class="game-date-day">20</div><div class="game-date-month">Jun</div></div><div class="game-sep"></div><div class="game-info"><div class="game-matchup">Alex BC — Season Resumes</div><div class="game-meta">📍 Eagles League · Full fixtures TBC on 20 June 2026</div></div><span class="game-badge badge-tournament">Eagles League</span></div>
     </div>
-    <div class="cal-grid" id="calGrid"></div>
-    <div class="cal-legend">
-      <div class="leg"><div class="leg-dot leg-home"></div>Home</div>
-      <div class="leg"><div class="leg-dot leg-away"></div>Away</div>
-      <div class="leg"><div class="leg-dot leg-tour"></div>Tournament</div>
+  </div>
+
+  <!-- PAST RESULTS -->
+  <div id="pane-results" style="display:none">
+    <div style="display:flex;flex-direction:column;gap:0.8rem">
+
+      <div style="background:var(--card);border-radius:10px;padding:1.2rem 1.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;border:1px solid rgba(147,51,234,0.15)">
+        <div style="min-width:90px;text-align:center"><div style="font-family:'Bebas Neue',sans-serif;font-size:0.85rem;color:var(--gray);letter-spacing:1px">APR 25</div><div style="font-size:0.7rem;color:var(--gray)">Week 3</div></div>
+        <div style="flex:1"><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--white)">Alex BC vs Kyalami Kings</div><div style="font-size:0.8rem;color:var(--gray)">U14 Boys · SJ Court 6</div></div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--white)">20 – 0</div>
+        <span style="background:rgba(34,197,94,0.15);color:#22c55e;border:1px solid rgba(34,197,94,0.3);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;padding:0.3rem 0.8rem;border-radius:20px">W</span>
+      </div>
+
+      <div style="background:var(--card);border-radius:10px;padding:1.2rem 1.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;border:1px solid rgba(147,51,234,0.15)">
+        <div style="min-width:90px;text-align:center"><div style="font-family:'Bebas Neue',sans-serif;font-size:0.85rem;color:var(--gray);letter-spacing:1px">APR 25</div><div style="font-size:0.7rem;color:var(--gray)">Week 3</div></div>
+        <div style="flex:1"><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--white)">Alex BC vs Soweto Basketball Academy</div><div style="font-size:0.8rem;color:var(--gray)">U14 Boys · SJ Court 6</div></div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--white)">32 – 31</div>
+        <span style="background:rgba(34,197,94,0.15);color:#22c55e;border:1px solid rgba(34,197,94,0.3);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;padding:0.3rem 0.8rem;border-radius:20px">W</span>
+      </div>
+
+      <div style="background:var(--card);border-radius:10px;padding:1.2rem 1.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;border:1px solid rgba(147,51,234,0.15)">
+        <div style="min-width:90px;text-align:center"><div style="font-family:'Bebas Neue',sans-serif;font-size:0.85rem;color:var(--gray);letter-spacing:1px">APR 25</div><div style="font-size:0.7rem;color:var(--gray)">Week 3</div></div>
+        <div style="flex:1"><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--white)">Alex BC vs Maverick Stars BC</div><div style="font-size:0.8rem;color:var(--gray)">Mini Eagles - Girls · SJ Court 2</div></div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--white)">23 – 60</div>
+        <span style="background:rgba(239,68,68,0.15);color:#ef4444;border:1px solid rgba(239,68,68,0.3);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;padding:0.3rem 0.8rem;border-radius:20px">L</span>
+      </div>
+
+      <div style="background:var(--card);border-radius:10px;padding:1.2rem 1.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;border:1px solid rgba(147,51,234,0.15)">
+        <div style="min-width:90px;text-align:center"><div style="font-family:'Bebas Neue',sans-serif;font-size:0.85rem;color:var(--gray);letter-spacing:1px">MAY 02</div><div style="font-size:0.7rem;color:var(--gray)">Week 4</div></div>
+        <div style="flex:1"><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--white)">Alex BC vs Elite Basketball Academy</div><div style="font-size:0.8rem;color:var(--gray)">U14 Boys · SJ Court 6</div></div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--white)">42 – 32</div>
+        <span style="background:rgba(34,197,94,0.15);color:#22c55e;border:1px solid rgba(34,197,94,0.3);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;padding:0.3rem 0.8rem;border-radius:20px">W</span>
+      </div>
+
+      <div style="background:var(--card);border-radius:10px;padding:1.2rem 1.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;border:1px solid rgba(147,51,234,0.15)">
+        <div style="min-width:90px;text-align:center"><div style="font-family:'Bebas Neue',sans-serif;font-size:0.85rem;color:var(--gray);letter-spacing:1px">MAY 02</div><div style="font-size:0.7rem;color:var(--gray)">Week 4</div></div>
+        <div style="flex:1"><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--white)">Alex BC vs Dribbling Soul BC</div><div style="font-size:0.8rem;color:var(--gray)">U14 Boys · SJ Court 5</div></div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--white)">27 – 41</div>
+        <span style="background:rgba(239,68,68,0.15);color:#ef4444;border:1px solid rgba(239,68,68,0.3);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;padding:0.3rem 0.8rem;border-radius:20px">L</span>
+      </div>
+
+      <div style="background:var(--card);border-radius:10px;padding:1.2rem 1.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;border:1px solid rgba(147,51,234,0.15)">
+        <div style="min-width:90px;text-align:center"><div style="font-family:'Bebas Neue',sans-serif;font-size:0.85rem;color:var(--gray);letter-spacing:1px">MAY 16</div><div style="font-size:0.7rem;color:var(--gray)">Week 6</div></div>
+        <div style="flex:1"><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--white)">Soweto Basketball Academy vs Alex BC</div><div style="font-size:0.8rem;color:var(--gray)">U23 Men · Bennies 3</div></div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--white)">36 – 32</div>
+        <span style="background:rgba(239,68,68,0.15);color:#ef4444;border:1px solid rgba(239,68,68,0.3);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;padding:0.3rem 0.8rem;border-radius:20px">L</span>
+      </div>
+
+      <div style="background:var(--card);border-radius:10px;padding:1.2rem 1.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;border:1px solid rgba(147,51,234,0.15)">
+        <div style="min-width:90px;text-align:center"><div style="font-family:'Bebas Neue',sans-serif;font-size:0.85rem;color:var(--gray);letter-spacing:1px">MAY 16</div><div style="font-size:0.7rem;color:var(--gray)">Week 6</div></div>
+        <div style="flex:1"><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--white)">JWSA vs Alex BC</div><div style="font-size:0.8rem;color:var(--gray)">U23 Men · Bennies 6</div></div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--white)">53 – 46</div>
+        <span style="background:rgba(239,68,68,0.15);color:#ef4444;border:1px solid rgba(239,68,68,0.3);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;padding:0.3rem 0.8rem;border-radius:20px">L</span>
+      </div>
+
+      <div style="background:var(--card);border-radius:10px;padding:1.2rem 1.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;border:1px solid rgba(147,51,234,0.15)">
+        <div style="min-width:90px;text-align:center"><div style="font-family:'Bebas Neue',sans-serif;font-size:0.85rem;color:var(--gray);letter-spacing:1px">MAY 24</div><div style="font-size:0.7rem;color:var(--gray)">Week 7</div></div>
+        <div style="flex:1"><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--white)">Evaton Warriors BC vs Alex BC</div><div style="font-size:0.8rem;color:var(--gray)">U23 Men · Bennies 1</div></div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--white)">45 – 34</div>
+        <span style="background:rgba(239,68,68,0.15);color:#ef4444;border:1px solid rgba(239,68,68,0.3);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;padding:0.3rem 0.8rem;border-radius:20px">L</span>
+      </div>
+
     </div>
+    <div style="margin-top:1.2rem;text-align:center">
+      <a href="https://www.eaglesbasketleague.co.za/2026-eagles-league-season/" target="_blank" style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.9rem;letter-spacing:1px;text-transform:uppercase;color:var(--pl);text-decoration:none">View Full League Schedule ↗</a>
+    </div>
+  </div>
+
+  <!-- CALENDAR -->
+  <div id="pane-calendar" style="display:none">
+    <div class="calendar-wrap">
+      <div class="cal-header">
+        <div class="cal-title" id="calTitle"></div>
+        <div class="cal-nav">
+          <button onclick="changeMonth(-1)">&#8592;</button>
+          <button onclick="changeMonth(1)">&#8594;</button>
+        </div>
+      </div>
+      <div class="cal-grid-header">
+        <div class="cal-day-name">Sun</div><div class="cal-day-name">Mon</div><div class="cal-day-name">Tue</div>
+        <div class="cal-day-name">Wed</div><div class="cal-day-name">Thu</div><div class="cal-day-name">Fri</div><div class="cal-day-name">Sat</div>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+      <div class="cal-legend">
+        <div class="leg"><div class="leg-dot leg-home"></div>Win</div>
+        <div class="leg"><div class="leg-dot leg-away"></div>Loss</div>
+        <div class="leg"><div class="leg-dot leg-tour"></div>Upcoming</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE STREAM -->
+<section id="stream" style="background:var(--dark)">
+  <p class="section-tag reveal">Watch Live</p>
+  <h2 class="section-title reveal">Stream Our <span>Games</span></h2>
+  <div class="divider reveal"></div>
+  <p class="section-sub reveal">Follow us on Facebook or Instagram to watch our games live. When a game is on, go live on your page and fans can watch in real time — for free!</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem" class="reveal">
+    <div style="background:var(--card);border-radius:12px;padding:2rem;border:1px solid rgba(147,51,234,0.2);text-align:center;transition:transform 0.2s,border-color 0.2s" onmouseover="this.style.transform='translateY(-5px)';this.style.borderColor='var(--yellow)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(147,51,234,0.2)'">
+      <div style="font-size:3rem;margin-bottom:1rem">📘</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:2px;color:var(--yellow);margin-bottom:0.5rem">Facebook Live</div>
+      <div style="font-size:0.9rem;color:var(--gray);line-height:1.6;margin-bottom:1.5rem">Watch our games live on Facebook. Follow our page and turn on notifications so you never miss a tip-off.</div>
+      <a href="https://web.facebook.com/alexandrabasketballacademy" target="_blank" style="display:inline-block;background:var(--yellow);color:var(--pd);padding:0.75rem 1.8rem;border-radius:6px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.9rem;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:all 0.2s" onmouseover="this.style.background='var(--yl)'" onmouseout="this.style.background='var(--yellow)'">Follow on Facebook ↗</a>
+    </div>
+    <div style="background:var(--card);border-radius:12px;padding:2rem;border:1px solid rgba(147,51,234,0.2);text-align:center;transition:transform 0.2s,border-color 0.2s" onmouseover="this.style.transform='translateY(-5px)';this.style.borderColor='var(--yellow)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(147,51,234,0.2)'">
+      <div style="font-size:3rem;margin-bottom:1rem">📸</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:2px;color:var(--yellow);margin-bottom:0.5rem">Instagram Live</div>
+      <div style="font-size:0.9rem;color:var(--gray);line-height:1.6;margin-bottom:1.5rem">Catch game highlights, behind-the-scenes and live coverage on our Instagram. Follow us and never miss the action.</div>
+      <a href="https://www.instagram.com/alexandrabasketballclub" target="_blank" style="display:inline-block;background:var(--yellow);color:var(--pd);padding:0.75rem 1.8rem;border-radius:6px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.9rem;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:all 0.2s" onmouseover="this.style.background='var(--yl)'" onmouseout="this.style.background='var(--yellow)'">Follow on Instagram ↗</a>
+    </div>
+  </div>
+  <div style="margin-top:2rem;background:rgba(147,51,234,0.08);border:1px solid rgba(147,51,234,0.2);border-radius:10px;padding:1.2rem 1.5rem;display:flex;align-items:center;gap:1rem" class="reveal">
+    <span style="font-size:1.5rem">💡</span>
+    <div style="font-size:0.9rem;color:var(--gray)"><strong style="color:var(--white)">How to go live:</strong> On game day, open Facebook or Instagram on your phone, tap the Live button, and your followers will get notified instantly. No equipment needed — just your phone!</div>
   </div>
 </section>
 
@@ -484,27 +602,20 @@ footer{background:var(--dark);padding:2rem 2.5rem;display:flex;align-items:cente
     <div class="why-card reveal delay-3"><div class="why-icon">📚</div><div class="why-title">Youth Development</div><div class="why-text">We run coaching clinics, mentorship, and life-skills programmes that go beyond the game.</div></div>
     <div class="why-card reveal delay-4"><div class="why-icon">✈️</div><div class="why-title">Travel &amp; Tournaments</div><div class="why-text">Donations help our teams travel to regional and national competitions, giving them exposure they couldn't otherwise afford.</div></div>
   </div>
-  <div class="sponsor-tiers">
-    <div class="tier-card tier-bronze reveal delay-1">
-      <div class="tier-icon">🤝</div>
-      <div class="tier-name">Community Partner</div>
-      <div class="tier-price" style="color:var(--gray);font-size:1rem;font-weight:400;font-family:'Barlow',sans-serif">In-kind or small contribution</div>
-      <ul class="tier-perks"><li>Logo on our website</li><li>Social media recognition</li><li>Match-day programme listing</li></ul>
-    </div>
-    <div class="tier-card tier-silver reveal delay-2">
-      <div class="tier-icon">💜</div>
-      <div class="tier-name">Club Supporter</div>
-      <div class="tier-price" style="color:var(--gray);font-size:1rem;font-weight:400;font-family:'Barlow',sans-serif">Regular / ongoing support</div>
-      <ul class="tier-perks"><li>All Community Partner benefits</li><li>Courtside banner</li><li>Logo on training kit</li><li>Dedicated social media posts</li></ul>
-    </div>
-    <div class="tier-card tier-gold reveal delay-3">
-      <div class="tier-icon">⭐</div>
-      <div class="tier-name">Founding Partner</div>
-      <div class="tier-price" style="color:var(--gray);font-size:1rem;font-weight:400;font-family:'Barlow',sans-serif">Strategic / major partnership</div>
-      <ul class="tier-perks"><li>All Club Supporter benefits</li><li>Jersey logo placement</li><li>PA announcements at games</li><li>Exclusive partner event invite</li><li>Featured story on website</li></ul>
+  <div style="max-width:520px;margin:0 auto 2rem" class="reveal">
+    <div style="background:var(--card);border-radius:16px;padding:2.5rem;border:2px solid rgba(250,204,21,0.35);text-align:center;transition:transform 0.3s,box-shadow 0.3s" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(250,204,21,0.2)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+      <div style="font-size:3rem;margin-bottom:1rem">🤝</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:2px;color:var(--yellow);margin-bottom:0.5rem">Community Partner</div>
+      <div style="font-size:0.95rem;color:var(--gray);line-height:1.7;margin-bottom:1.5rem">Join us as a Community Partner and help us keep basketball accessible to every young person in Alexandra — regardless of their background.</div>
+      <ul style="list-style:none;text-align:left;margin-bottom:1.8rem">
+        <li style="font-size:0.9rem;color:var(--gray);padding:0.5rem 0;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;gap:0.5rem"><span style="color:var(--yellow);font-weight:700">✓</span> Your logo on our website & social media</li>
+        <li style="font-size:0.9rem;color:var(--gray);padding:0.5rem 0;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;gap:0.5rem"><span style="color:var(--yellow);font-weight:700">✓</span> Recognition at match days & events</li>
+        <li style="font-size:0.9rem;color:var(--gray);padding:0.5rem 0;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;gap:0.5rem"><span style="color:var(--yellow);font-weight:700">✓</span> Direct impact on youth in Alexandra</li>
+        <li style="font-size:0.9rem;color:var(--gray);padding:0.5rem 0;display:flex;align-items:center;gap:0.5rem"><span style="color:var(--yellow);font-weight:700">✓</span> Personalised partnership — we work with what you can give</li>
+      </ul>
+      <a href="#contact" style="display:inline-block;background:var(--yellow);color:var(--pd);padding:0.9rem 2.5rem;border-radius:6px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all 0.2s;box-shadow:0 0 30px rgba(250,204,21,0.25)" onmouseover="this.style.background='var(--yl)'" onmouseout="this.style.background='var(--yellow)'">Get In Touch ↓</a>
     </div>
   </div>
-  <p style="color:var(--gray);font-size:0.9rem;margin-top:1rem">All contributions go directly to supporting players and programmes. Contact us to discuss how you can help.</p>
 </section>
 
 <!-- CONTACT -->
@@ -708,6 +819,17 @@ document.addEventListener('keydown',e=>{
   }
   if(document.getElementById('playerModal').classList.contains('open')&&e.key==='Escape')closePlayer();
 });
+
+// ── TABS ──
+function showTab(name) {
+  ['upcoming','results','calendar'].forEach(t => {
+    document.getElementById('pane-'+t).style.display = t===name ? 'block' : 'none';
+    const btn = document.getElementById('tab-'+t);
+    btn.style.background = t===name ? 'var(--yellow)' : 'var(--card)';
+    btn.style.color = t===name ? 'var(--pd)' : 'var(--gray)';
+  });
+  if(name==='calendar') renderCalendar();
+}
 
 // ── FIXTURE CALENDAR ──
 const fixtures={
